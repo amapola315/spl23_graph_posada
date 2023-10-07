@@ -12,18 +12,18 @@ The program has a command line interface CLI and handles directed graphs, where 
 
     ```plaintext
 ---Input data for a directed graph structure---
-Enter number of nodes: 2
-enter for node (1) a name: a
-enter for node (2) a name: b
-Enter number of edges: 2
-Enter connection for edge 1:
-from node: a
----> to node: b
-enter weight: 3
-Enter connection for edge 2:
-from node: b
----> to node: a
-enter weight: 5
+    Enter number of nodes: 2
+    enter for node (1) a name: a
+    enter for node (2) a name: b
+    Enter number of edges: 2
+    Enter connection for edge 1:
+    from node: a
+    ---> to node: b
+    enter weight: 3
+    Enter connection for edge 2:
+    from node: b
+    ---> to node: a
+    enter weight: 5
     ```
 
 - **output (Graph structure):**
