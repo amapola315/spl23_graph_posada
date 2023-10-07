@@ -11,7 +11,7 @@ The program has a command line interface CLI and handles directed graphs, where 
 - **Data input:**
 
     ```plaintext
----Input data for a directed graph structure---
+    Input data for a directed graph structure:
     Enter number of nodes: 2
     enter for node (1) a name: a
     enter for node (2) a name: b
