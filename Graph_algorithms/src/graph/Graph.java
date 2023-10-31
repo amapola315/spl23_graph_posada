@@ -10,13 +10,15 @@ import java.util.Set;
 
 public class Graph {
     private List<Node> nodes;
+    private boolean isDirected, edgeExists = false;
 
-    public Graph() {
+    public Graph(boolean isDirected) {
         this.nodes = new ArrayList<>();
+        this.isDirected = isDirected;
     }
 
     public void addNode(String label) {
-        nodes.add(new Node(label));
+        nodes.add(new Node(label, isDirected));
     }
 
     public void addEdge(String from, String to, int weight) {
@@ -26,8 +28,25 @@ public class Graph {
         if (fromNode == null || toNode == null)
             throw new IllegalArgumentException("Invalid node name");
 
-        fromNode.addNeighbor(toNode, weight);
+      
+        
+        if (isDirected) {
+            fromNode.addNeighbor(toNode, weight);
+        } else {
+            for (Edge edge : fromNode.getNeighbors()) {
+                if (edge.getDestination() == toNode) {
+                    edgeExists = true;
+                    break;
+                }
+            }
+
+            if (!edgeExists) {
+                fromNode.addNeighbor(toNode, weight);
+                toNode.addNeighbor(fromNode, weight);
+            }
+        }
     }
+
 
     public Node getNode(String label) {
         for (Node node : nodes) {
